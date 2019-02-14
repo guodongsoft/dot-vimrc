@@ -21,13 +21,16 @@ function vimrc_inst()
     # sudo apt-get install ack-grep ctags
 
     #install vim config and plugin
-    mv ~/.vimrc ~/.vimrc.bak.`date +%Y%m%d%H%M%S`
     mv ~/.vim ~/.vim.bak.`date +%Y%m%d%H%M%S`
+    mv ~/.vimrc ~/.vimrc.bak.`date +%Y%m%d%H%M%S`
 
-    echo "ln -s $CURDIR/.vimrc ~/.vimrc"
+    echo "git clone https://github.com/gmarik/vundle.git $CURDIR/bundle/vundle"
+    git clone https://github.com/gmarik/vundle.git $CURDIR/bundle/vundle
+
+    echo "ln -s $CURDIR ~/.vim"
+    ln -s $CURDIR ~/.vim
+    echo "ln -s $CURDIR/.vimrc ~/vimrc"
     ln -s $CURDIR/.vimrc ~/.vimrc
-    echo "ln -s $CURDIR/.vim ~/.vim"
-    ln -s $CURDIR/.vim ~/.vim
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim -u ~/.vimrc -c ":BundleInstall" -c ":q" -c ":q"

@@ -29,8 +29,8 @@ function vimrc_inst()
 
     echo "ln -s $CURDIR ~/.vim"
     ln -s $CURDIR ~/.vim
-    echo "ln -s $CURDIR/.vimrc ~/vimrc"
-    ln -s $CURDIR/.vimrc ~/.vimrc
+    echo "ln -s $CURDIR/vimrc ~/.vimrc"
+    ln -s $CURDIR/vimrc ~/.vimrc
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim -u ~/.vimrc -c ":BundleInstall" -c ":q" -c ":q"

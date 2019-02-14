@@ -148,6 +148,7 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
 let NERDTreeWinPos = "right"
 
 " nerdcommenter

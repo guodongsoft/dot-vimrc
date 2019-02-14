@@ -12,22 +12,30 @@ function vimrc_inst()
     # brew install macvim ack ctags
 
     # ArchLinux
-    # yaourt -S gvim ack ctags
+    # sudo yay -S gvim ack ctags
 
     # Ubuntu
     # sudo apt-get install vim-gtk ack-grep ctags
 
-    #install vim config and plugin
+    VIMTMP=~/.vim.bak
+    if [[ ! -e $VIMTMP ]]
+    then
+        echo "mkdir -p $VIMTMP"
+        mkdir -p $VIMTMP
+    fi
+
+    # install vim config and plugin
+    DATETIME=`date +%Y%m%d%H%M%S`
     if [[ -e ~/.vim ]]
     then
-        echo "mv ~/.vim ~/.vim.bak.`date +%Y%m%d%H%M%S`"
-        mv ~/.vim ~/.vim.bak.`date +%Y%m%d%H%M%S`
+        echo "mv ~/.vim $VIMTMP/vim.$DATETIME"
+        mv ~/.vim $VIMTMP/vim.$DATETIME
     fi
 
     if [[ -e ~/.vimrc ]]
     then
-        echo "mv ~/.vimrc ~/.vimrc.bak.`date +%Y%m%d%H%M%S`"
-       	mv ~/.vimrc ~/.vimrc.bak.`date +%Y%m%d%H%M%S`
+        echo "mv ~/.vimrc $VIMTMP/vimrc.$DATETIME"
+        mv ~/.vimrc $VIMTMP/vimrc.$DATETIME
     fi
 
     VUNDLEDIR=$CURDIR/bundle/vundle

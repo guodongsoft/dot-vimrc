@@ -268,7 +268,7 @@ Other configurations are also well organized in vimrc.
 * 执行:GoRun，编译运行当前main package。
 * 执行:GoBuild，编译当前包，这取决于你的源文件，GoBuild不产生结果文件。
 * 执行:GoInstall，安装当前包。
-* 执行:GoTest，测试你当前路径下地_test.go文件。
+* 执行:GoTest，测试你当前路径下地`_test.go`文件。
 * 执行:GoCoverage，创建一个测试覆盖结果文件，并打开浏览器展示当前包的情况。
 * 执行:GoErrCheck，检查当前包种可能的未捕获的errors。
 * 执行:GoFiles，显示当前包对应的源文件列表。

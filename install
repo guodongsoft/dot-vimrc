@@ -24,7 +24,9 @@ function vimrc_inst()
     mv ~/.vimrc ~/.vimrc.bak.`date +%Y%m%d%H%M%S`
     mv ~/.vim ~/.vim.bak.`date +%Y%m%d%H%M%S`
 
+    echo "ln -s $CURDIR/.vimrc ~/.vimrc"
     ln -s $CURDIR/.vimrc ~/.vimrc
+    echo "ln -s $CURDIR/.vim ~/.vim"
     ln -s $CURDIR/.vim ~/.vim
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

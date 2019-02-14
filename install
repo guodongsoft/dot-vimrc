@@ -9,16 +9,13 @@ CORES=`cat /proc/cpuinfo | grep "processor" | wc -l`
 function vimrc_inst()
 {
     # OS X
-    # brew install macvim
-    # brew install ack ctags
+    # brew install macvim ack ctags
 
     # ArchLinux
-    # yaourt -S gvim
-    # yaourt -S ack ctags
+    # yaourt -S gvim ack ctags
 
     # Ubuntu
-    # sudo apt-get install vim-gtk
-    # sudo apt-get install ack-grep ctags
+    # sudo apt-get install vim-gtk ack-grep ctags
 
     #install vim config and plugin
     if [[ -e ~/.vim ]]

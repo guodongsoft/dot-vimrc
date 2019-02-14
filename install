@@ -8,15 +8,6 @@ CORES=`cat /proc/cpuinfo | grep "processor" | wc -l`
 
 function vimrc_inst()
 {
-    # OS X
-    # brew install macvim ack ctags
-
-    # ArchLinux
-    # sudo yay -S gvim ack ctags
-
-    # Ubuntu
-    # sudo apt-get install vim-gtk ack-grep ctags
-
     VIMTMP=~/.vim.bak
     if [[ ! -e $VIMTMP ]]
     then
@@ -171,6 +162,46 @@ function go_inst()
     sudo sh -c 'echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile'
     sudo echo "set -x PATH /usr/local/go/bin $PATH" >> ~/.config/fish/config.fish
 }
+
+function check_installed()
+{
+    CMD=$1
+    command -v $CMD >/dev/null 2>&1 || {
+        echo "Error: $CMD is not installed" >&2
+        exit 1
+    }
+}
+
+# Check git
+check_installed git
+
+# Brew
+if [ "$SYSTEM" = "Darwin" ]; then
+    printf " ➜  Installing Homebrew...\n"
+    if ! command -v brew >/dev/null 2>&1; then
+        # Install homebrew
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+        # Tap cask and cask-upgrade
+        brew tap homebrew/cask
+        brew tap homebrew/cask-fonts
+        brew tap buo/cask-upgrade
+    fi
+
+    brew install -y macvim ack ctags
+fi
+
+
+# ArchLinux
+#check_installed yay
+# sudo yay -Sy gvim ack ctags
+
+# Ubuntu
+#check_installed apt-get
+# sudo apt-get install vim-gtk ack-grep ctags
+
+
+
 
 if [ "$1" != ""  ];then
     OBJ=$1

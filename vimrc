@@ -232,10 +232,10 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nmap <F5> :TagbarToggle<cr>
-nmap <F6> :NERDTreeToggle<cr>
-nnoremap <F7> :call Split()<CR>
-nnoremap <F8> :call VSplit()<CR>
+nmap <F7> :TagbarToggle<cr>
+nmap <F8> :NERDTreeToggle<cr>
+nnoremap <F9> :call Split()<CR>
+nnoremap <F10> :call VSplit()<CR>
 nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]

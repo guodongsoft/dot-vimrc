@@ -218,6 +218,7 @@ fu! Split()
     " resize the height of terminal windows
     resize 15
     :call OpenTerminal()
+    setlocal nobuflisted
 endf
 
 fu! VSplit()
@@ -225,6 +226,7 @@ fu! VSplit()
     vsplit
     exe "normal\<C-w>w"
     :call OpenTerminal()
+    setlocal nobuflisted
 endf
 
 " Keybindings for plugin toggle
